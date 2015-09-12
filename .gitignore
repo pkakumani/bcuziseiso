@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -41,3 +42,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+=======
+.DS_Store
+converage/
+node_modules/
+npm-debug.log
+>>>>>>> 9089486ef5c536f8c0f5f97abcb227d314455a29

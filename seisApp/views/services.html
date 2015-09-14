@@ -1,0 +1,179 @@
+<div>
+
+	<div class="breadcums">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<ul class="breadcrumb text-uppercase">
+					<li><a href="index.html">HOME</a>
+					</li>
+					<li class="active">SERVICES </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="page_title">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-capitalize">
+				<h1>Data Master Editor</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="who_login">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<p>Signed in as</p>
+				<div class="dropdown">
+					<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Nick <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="data_master_services">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" ng-model="servicesModel" btn-radio="'services'">
+						<a href="javascript:void(0);">Services</a>
+					</li>
+					<li role="presentation" ng-model="servicesModel" btn-radio="'servicesGroups'">
+						<a href="javascript:void(0);">Services Groups</a>
+					</li>
+					<li role="presentation" ng-model="servicesModel" btn-radio="'environments'">
+						<a href="javascript:void(0);">Environments</a>
+					</li>
+					<li role="presentation" ng-model="servicesModel" btn-radio="'etcetera'">
+						<a href="javascript:void(0);">Etcetera</a>
+					</li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="" id="services" ng-if="servicesModel=='services'">
+						<div class="row">
+							<form name="quoteSearchForm" novalidate>
+								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+									<section class="select_services">
+										<div class="quote_service">
+											<label>Select Service:</label>
+											<select>
+												<option>Quote Search</option>
+												<option>Quote Search 1</option>
+												<option>Quote Search 2</option>
+											</select>
+										</div>
+										<div class="quote_service instances_service">
+											<label>Instances:</label>
+											<div class="instances_quote_service">
+												<ul>
+													<li class="active">quote-search*</li>
+													<li>/quote-search-dev</li>
+													<li>/quote-search-dev2</li>
+													<li>/quote-search-test</li>
+													<li>/quote-search-stg</li>
+												</ul>
+											</div>
+										</div>
+										<div class="quote_service quote_instance_buttons">
+											<label>Changes <span>(3)</span>:</label>
+											<div class="quote_instance_services_buttons">
+												<a href="javascript:void(0);" data="revert">Revert</a>
+												<div class="pull-right">
+													<a href="javascript:void(0);">Save</a>
+													<a href="javascript:void(0);" data="publish">Publish</a>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+									<section class="quote_search">
+										<div class="quote_search_labelform">
+											<label>quote-search</label>
+											<div class="quote_search_form">
+												<!--													<form name="quoteSearchForm" novalidate>-->
+												<div class="row form-group">
+													<label for="Key" class="col-xs-12 col-sm-4 col-md-4 col-lg-3 control-label">Key:</label>
+													<div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+														<p>Read Only Text</p>
+													</div>
+												</div>
+												<div class="row form-group">
+													<label for="Name" class="col-xs-12 col-sm-4 col-md-4 col-lg-3 control-label">Name:</label>
+													<div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+														<input type="text" ng-model="formFilds.searchName" name="name" class="form-control" placeholder="Text Entry" required ng-class="quoteSearchForm.name.$dirty && quoteSearchForm.name.$invalid ?'error':''">
+														<span class="glyphicon glyphicon-ok" ng-show="quoteSearchForm.name.$dirty && quoteSearchForm.name.$valid"  ng-class="quoteSearchForm.name.$invalid?'visibility_hide':''"></span>										
+														<span class="glyphicon glyphicon-remove" ng-show="quoteSearchForm.name.$dirty && quoteSearchForm.name.$invalid" ng-class="quoteSearchForm.name.$valid?'visibility_hide':''"></span>
+
+													</div>
+												</div>
+												<div class="row form-group">
+													<label for="Type" class="col-xs-12 col-sm-4 col-md-4 col-lg-3 control-label">Type:</label>
+													<div class="col-xs-12 col-sm-8 col-md-8 col-lg-6 quote_service">
+														<select class="form-control">
+															<option>Dropdown</option>
+														</select>
+													</div>
+												</div>
+												<div class="row form-group">
+													<label for="Alert Distro" class="col-xs-12 col-sm-4 col-md-4 col-lg-3 control-label">Alert Distro:</label>
+													<div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+														<input type="text" ng-model="formFilds.email1" name="email1" ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{3,}))$/' class="form-control" value="" placeholder="example@domain.com" required ng-class="quoteSearchForm.email1.$dirty && quoteSearchForm.email1.$invalid ?'error':'success'">
+														<span class="glyphicon glyphicon-ok" ng-show="quoteSearchForm.email1.$dirty && quoteSearchForm.email1.$valid"  ng-class="quoteSearchForm.email1.$invalid?'visibility_hide':''"></span>										
+														<span class="glyphicon glyphicon-remove" ng-show="quoteSearchForm.email1.$dirty && quoteSearchForm.email1.$invalid" ng-class="quoteSearchForm.email1.$valid?'visibility_hide':''"></span>
+													</div>
+												</div>
+												<div class="row form-group">
+													<label for="Alert Distro" class="col-xs-12 col-sm-4 col-md-4 col-lg-3 control-label">Alert Distro:</label>
+													<div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">														
+														<input type="text" ng-model="formFilds.email2" name="email2" ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{3,}))$/' class="form-control" value="" placeholder="example@domain.com" required ng-class="quoteSearchForm.email2.$dirty && quoteSearchForm.email2.$invalid ?'error':'success'">
+														<span class="glyphicon glyphicon-ok" ng-show="quoteSearchForm.email2.$dirty && quoteSearchForm.email2.$valid"  ng-class="quoteSearchForm.email2.$invalid?'visibility_hide':''"></span>										
+														<span class="glyphicon glyphicon-remove" ng-show="quoteSearchForm.email2.$dirty && quoteSearchForm.email2.$invalid" ng-class="quoteSearchForm.email2.$valid?'visibility_hide':''"></span>
+														
+													</div>
+												</div>
+												<div class="row form-group">
+													<label for="Alert Distro" class="col-xs-12 col-sm-4 col-md-4 col-lg-3 control-label">Alert Distro:</label>
+													<div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+														<input type="text" ng-model="formFilds.email3" name="email3" ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{3,}))$/' class="form-control" value="" placeholder="example@domain.com" required ng-class="quoteSearchForm.email3.$dirty && quoteSearchForm.email3.$invalid ?'error':'success'">
+														<span class="glyphicon glyphicon-ok" ng-show="quoteSearchForm.email3.$dirty && quoteSearchForm.email3.$valid"  ng-class="quoteSearchForm.email3.$invalid?'visibility_hide':''"></span>										
+														<span class="glyphicon glyphicon-remove" ng-show="quoteSearchForm.email3.$dirty && quoteSearchForm.email3.$invalid" ng-class="quoteSearchForm.email3.$valid?'visibility_hide':''"></span>
+													</div>
+												</div>
+												<div class="row form-group">
+													<label for="Platform" class="col-xs-12 col-sm-4 col-md-4 col-lg-3 control-label">Platform:</label>
+													<div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+														<input type="text" class="form-control"  name="platform"  placeholder="autcomplete" ng-model="formFilds.platform"  required ng-class="quoteSearchForm.platform.$dirty && quoteSearchForm.platform.$invalid ?'error':''">
+														<span class="glyphicon glyphicon-ok" ng-show="quoteSearchForm.platform.$dirty && quoteSearchForm.platform.$valid"  ng-class="quoteSearchForm.platform.$invalid?'visibility_hide':''"></span>										
+														<span class="glyphicon glyphicon-remove" ng-show="quoteSearchForm.platform.$dirty && quoteSearchForm.platform.$invalid" ng-class="quoteSearchForm.platform.$valid?'visibility_hide':''"></span>
+
+													</div>
+												</div>
+												<div class="row form-group">
+													<label for="Description" class="col-xs-12 col-sm-4 col-md-4 col-lg-3 control-label">Description:</label>
+													<div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+														<textarea>Large amount of text. Large amount of text. Large amount of text. Large amount of text. Large amount of text.</textarea>
+													</div>
+												</div>
+							</form>
+							</div>
+							</div>
+							</section>
+							</div>
+						</div>
+					</div>
+					<div role="tabpanel" class="" id="services_groups" ng-if="servicesModel=='servicesGroups'">2</div>
+					<div role="tabpanel" class="" id="environments" ng-if="servicesModel=='environments'">3</div>
+					<div role="tabpanel" class="" id="etcetera" ng-if="servicesModel=='etcetera'">4</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
